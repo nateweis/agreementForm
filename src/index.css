@@ -12,15 +12,13 @@ code {
     monospace;
 }
 
-div{
-  border: 1px solid black;
-}
-
 .slideContainer{
   overflow: hidden;
   position: relative;
   width: 500px;
   /* background-color: pink; */
+  border: 1px solid black;
+  text-align: center;
 }
 
 .allSlides{
@@ -38,4 +36,7 @@ div{
 
 .slide ul li{
   margin-bottom: 10px;
+}
+.err{
+  color: rgb(231, 85, 85);
 }
