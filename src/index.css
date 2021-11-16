@@ -16,7 +16,7 @@ code {
   overflow: hidden;
   position: relative;
   width: 500px;
-  height: 100vh;
+  min-height: 100vh;
   background-color: rgb(243, 243, 243);
   /* border: 1px solid black; */
   text-align: center;
