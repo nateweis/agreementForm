@@ -30,14 +30,14 @@ class Form extends Component {
     if(!next)this.setState({errMsg: "Fill out fields"})
     else if(!this.state.iBoost && !this.state.iLevel && !this.state.FireSystem) this.setState({errMsg: "Select a system"})
     else {
-      if(this.state.FireSystem) this.setState({submit: 'FireSystem', errMsg: '', marginLeft : -525})
-      else if(this.state.iLevel) this.setState({submit: 'iLevel', errMsg : '', marginLeft: -525})
-      else if(this.state.iBoost) this.setState({submit: 'iBoost', errMsg: '', marginLeft: -525})
+      if(this.state.FireSystem) this.setState({submit: 'FireSystem', errMsg: '', marginLeft : -500})
+      else if(this.state.iLevel) this.setState({submit: 'iLevel', errMsg : '', marginLeft: -500})
+      else if(this.state.iBoost) this.setState({submit: 'iBoost', errMsg: '', marginLeft: -500})
     }
   }
   goBack = () => {
     this.setState(pre => {
-      let marg = pre.marginLeft + 525
+      let marg = pre.marginLeft + 500
       return {marginLeft : marg}
     })
   }
@@ -54,7 +54,7 @@ class Form extends Component {
       }
       else {
         this.setState((pre) => {
-          let marg = pre.marginLeft - 525
+          let marg = pre.marginLeft - 500
           return {errMsg: "", marginLeft : marg}
         })
       }
@@ -184,7 +184,7 @@ class Form extends Component {
                 <div> <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/>Fire System</div>
               </div>
 
-              <button onClick={this.firstPageBtn}>Next</button>
+              <button className="btn btn-light" onClick={this.firstPageBtn}>Next</button>
             </div>
 
           <div className="slide" style={this.state.iBoost? style.visible: style.hidden}>
@@ -213,8 +213,8 @@ class Form extends Component {
               </ul>
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
-              <button onClick={this.goBack}>Back</button>
-              <button onClick={()=>this.nextBtn("boostPage", this.state.submit === 'iBoost'? true: false)}>
+              <button className="btn btn-light" onClick={this.goBack}>Back</button>
+              <button className="btn btn-light" onClick={()=>this.nextBtn("boostPage", this.state.submit === 'iBoost'? true: false)}>
                 {this.state.submit === 'iBoost'? 'Submit': 'Next'}
               </button>
             </div>
@@ -244,8 +244,8 @@ class Form extends Component {
               </ul>
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
-              <button onClick={this.goBack}>Back</button>
-              <button onClick={()=>this.nextBtn("levelPage", this.state.submit === 'iLevel'? true: false)}>{this.state.submit === 'iLevel'? 'Submit': 'Next'}</button>
+              <button className="btn btn-light" onClick={this.goBack}>Back</button>
+              <button className="btn btn-light" onClick={()=>this.nextBtn("levelPage", this.state.submit === 'iLevel'? true: false)}>{this.state.submit === 'iLevel'? 'Submit': 'Next'}</button>
             </div>
 
             <div className="slide" style={this.state.FireSystem? style.visible: style.hidden}>
@@ -273,8 +273,8 @@ class Form extends Component {
               </ul>
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
-              <button onClick={this.goBack}>Back</button>
-              <button onClick={()=>this.nextBtn("firePage", this.state.submit === 'FireSystem'? true: false)}>{this.state.submit === 'FireSystem'? 'Submit': 'Next'}</button>
+              <button className="btn btn-light" onClick={this.goBack}>Back</button>
+              <button className="btn btn-light" onClick={()=>this.nextBtn("firePage", this.state.submit === 'FireSystem'? true: false)}>{this.state.submit === 'FireSystem'? 'Submit': 'Next'}</button>
             </div>
 
           </div>

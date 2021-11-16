@@ -36,6 +36,7 @@ code {
 }
 .slide ul{
   width: 85%;
+  text-align: start;
 }
 
 .slide ul li{
@@ -51,4 +52,9 @@ code {
 /* Bootstrap Stuff */
 .form-check-input:focus{
   box-shadow: none;
+}
+
+.btn{
+  box-shadow: 0 0 0 0.25rem rgb(211 212 213 / 50%);
+  margin: 5px;
 }
