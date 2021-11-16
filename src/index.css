@@ -19,6 +19,7 @@ code {
   /* background-color: pink; */
   border: 1px solid black;
   text-align: center;
+  margin: auto;
 }
 
 .allSlides{
@@ -42,4 +43,9 @@ code {
 }
 .completed{
   color: rgb(63, 155, 63);
+}
+
+/* Bootstrap Stuff */
+.form-check-input:focus{
+  box-shadow: none;
 }
