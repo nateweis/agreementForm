@@ -40,3 +40,6 @@ code {
 .err{
   color: rgb(231, 85, 85);
 }
+.completed{
+  color: rgb(63, 155, 63);
+}

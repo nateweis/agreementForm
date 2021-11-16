@@ -2,7 +2,7 @@ import React from 'react';
 
 function Completed(){
     return(
-        <div>
+        <div className="completed">
             Completed!!!!
         </div>
     )
