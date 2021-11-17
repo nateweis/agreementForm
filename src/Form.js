@@ -100,7 +100,7 @@ class Form extends Component {
     return new Promise((resolve, reject) => {
       let string = ''
       
-      const boostStr = `<h4>iBoost Form Complete By Customer</h4><h5>Customer ${name} agreed to following requriments for an iBooster job</h5>` +
+      const boostStr = `<h4>iBoost Form Complete By Customer</h4><h5>Customer ${name} agreed to following requirements for an iBooster job</h5>` +
       '<ul><li>Access to top floor riser gauge and/or plumbing fixture recommended to verify pressure.</li>' +
       '<li>All plumbing connections have been completed and verified in working order without leaks.</li>'+
       '<li>Correct and permanent incoming power has been completed and verified.</li>' +
@@ -110,7 +110,7 @@ class Form extends Component {
       '<li>All systems should be installed to NYCDOB regulations. USPC is not responsible for required corrections, violations or failures issued by engineer or DOB.</li>'+
       '</ul><p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>';
 
-      const levelStr = `<h4>iLevel Form Complete By Customer</h4><h5>Customer ${name} agreed to following requriments for an iLevel job</h5>` +
+      const levelStr = `<h4>iLevel Form Complete By Customer</h4><h5>Customer ${name} agreed to following requirements for an iLevel job</h5>` +
       '<ul><li>Floats shall be set in pit and correctly labeled inside the control to verify which float corresponds to each level. If pits are not full, water must be'+
       'accessible to fill the pits to test rotation of the pumps. Pits should be cleaned of all construction material and debris.</li>' +
       '<li>All plumbing connections have been completed and verified in working order without leaks.</li>'+
@@ -121,7 +121,7 @@ class Form extends Component {
       '<li>All systems should be installed to NYCDOB regulations. USPC is not responsible for required corrections, violations or failures issued by engineer or DOB.</li>'+
       '</ul><p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>';
 
-      const fireStr = `<h4>Fire System Form Complete By Customer</h4><h5>Customer ${name} agreed to following requriments for a Fire System job</h5>` +
+      const fireStr = `<h4>Fire System Form Complete By Customer</h4><h5>Customer ${name} agreed to following requirements for a Fire System job</h5>` +
       '<ul><li>The entire system is required to be filled in order to start and program the system correctly. A partial startup is not acceptable and USPC is not responsible fro issues'+
       'that may stem for a partial startup. A fire pump should never be used to pressurize lines even to check leaks.</li>' +
       '<li>All plumbing connections have been completed and verified in working order without leaks.</li>'+
@@ -189,7 +189,7 @@ class Form extends Component {
 
           <div className="slide" style={this.state.iBoost? style.visible: style.hidden}>
             <h3>iBoost Requirements</h3>
-            <h5>please make sure all the requriments listed below are met</h5>
+            <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
@@ -221,7 +221,7 @@ class Form extends Component {
 
             <div className="slide" style={this.state.iLevel? style.visible: style.hidden}>
               <h3>iLevel Requirements</h3>
-              <h5>please make sure all the requriments listed below are met</h5>
+              <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
@@ -250,7 +250,7 @@ class Form extends Component {
 
             <div className="slide" style={this.state.FireSystem? style.visible: style.hidden}>
               <h3>Fire System Requirements</h3>
-              <h5>please make sure all the requriments listed below are met</h5>
+              <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
