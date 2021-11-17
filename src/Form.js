@@ -19,7 +19,8 @@ class Form extends Component {
         firePage:[false, false, false, false, false, false],
         errMsg : '',
         num: 1, 
-        marginLeft : 0
+        marginLeft : 0,
+        disableBtn: false
     }
   }
 
@@ -45,11 +46,11 @@ class Form extends Component {
     let next = true
     this.state[str].forEach(val => {if(!val) next = false})
 
-    if(!next)this.setState({errMsg: 'Please check all the requirments'})
+    if(!next)this.setState({errMsg: 'Please check all the requirements'})
     else{
       
       if(send){
-        this.setState({errMsg: ""})
+        this.setState({errMsg: "", disableBtn: true})
         this.sendEmail()
       }
       else {
@@ -214,7 +215,8 @@ class Form extends Component {
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
               <button className="btn btn-light" onClick={this.goBack}>Back</button>
-              <button className="btn btn-light" onClick={()=>this.nextBtn("boostPage", this.state.submit === 'iBoost'? true: false)}>
+              <button className={`btn ${this.state.submit === 'iBoost'? 'btn-success': 'btn-light'}` } disabled={this.state.disableBtn}
+              onClick={()=>this.nextBtn("boostPage", this.state.submit === 'iBoost'? true: false)}>
                 {this.state.submit === 'iBoost'? 'Submit': 'Next'}
               </button>
             </div>
@@ -245,7 +247,8 @@ class Form extends Component {
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
               <button className="btn btn-light" onClick={this.goBack}>Back</button>
-              <button className="btn btn-light" onClick={()=>this.nextBtn("levelPage", this.state.submit === 'iLevel'? true: false)}>{this.state.submit === 'iLevel'? 'Submit': 'Next'}</button>
+              <button className={`btn ${this.state.submit === 'iLevel'? 'btn-success': 'btn-light'}` } disabled={this.state.disableBtn}
+              onClick={()=>this.nextBtn("levelPage", this.state.submit === 'iLevel'? true: false)}>{this.state.submit === 'iLevel'? 'Submit': 'Next'}</button>
             </div>
 
             <div className="slide" style={this.state.FireSystem? style.visible: style.hidden}>
@@ -274,7 +277,8 @@ class Form extends Component {
 
               <p>If startup is not able to be completed, there will be a fee issued of <strong>$275</strong> for a return visit. This does not apply to warranty issues of a system. </p>
               <button className="btn btn-light" onClick={this.goBack}>Back</button>
-              <button className="btn btn-light" onClick={()=>this.nextBtn("firePage", this.state.submit === 'FireSystem'? true: false)}>{this.state.submit === 'FireSystem'? 'Submit': 'Next'}</button>
+              <button className={`btn ${this.state.submit === 'FireSystem'? 'btn-success': 'btn-light'}` } disabled={this.state.disableBtn}
+               onClick={()=>this.nextBtn("firePage", this.state.submit === 'FireSystem'? true: false)}>{this.state.submit === 'FireSystem'? 'Submit': 'Next'}</button>
             </div>
 
           </div>

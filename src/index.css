@@ -4,7 +4,7 @@
   --diameter: 70px;
   --circ-line-width: 2px;
   --background: #fff;
-  --color: rgb(63, 155, 63);
+  --color: #198754;
 }
 
 body {
@@ -58,7 +58,7 @@ code {
 
 /* Completed Page Animations  */
 .completed{
-  color: rgb(63, 155, 63);
+  color: var(--color);
   background-color: white;
   width: 300px;
   height: 300px;
