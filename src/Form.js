@@ -13,7 +13,7 @@ class Form extends Component {
         iBoost: false,
         iLevel: false,
         FireSystem: false,
-        firstPage:["",""],
+        firstPage:["","","","",""],
         boostPage:[false, false, false, false, false, false],
         levelPage:[false, false, false, false, false, false],
         firePage:[false, false, false, false, false, false],
@@ -28,7 +28,7 @@ class Form extends Component {
     let next = true
     this.state.firstPage.forEach(s => {if(!s) next = false})
 
-    if(!next)this.setState({errMsg: "Fill out fields"})
+    if(!next)this.setState({errMsg: "Fill out all fields"})
     else if(!this.state.iBoost && !this.state.iLevel && !this.state.FireSystem) this.setState({errMsg: "Select a system"})
     else {
       if(this.state.FireSystem) this.setState({submit: 'FireSystem', errMsg: '', marginLeft : -500})
@@ -64,17 +64,38 @@ class Form extends Component {
   }
 
   formChange = (e) => {
-    if(e.target.name === 'from_name') {
+    if(e.target.name === 'company_name') {
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[0] = e.target.value
         return {firstPage : arr}
       })
     }
-    else{
+    else if(e.target.name === 'company_email'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[1] = e.target.value
+        return {firstPage : arr}
+      })
+    }
+    else if(e.target.name === 'company_address'){
+      this.setState((pre) => {
+        let arr = pre.firstPage
+        arr[2] = e.target.value
+        return {firstPage : arr}
+      })
+    }
+    else if(e.target.name === 'contact_name'){
+      this.setState((pre) => {
+        let arr = pre.firstPage
+        arr[3] = e.target.value
+        return {firstPage : arr}
+      })
+    }
+    else if(e.target.name === 'contact_number'){
+      this.setState((pre) => {
+        let arr = pre.firstPage
+        arr[4] = e.target.value
         return {firstPage : arr}
       })
     }
@@ -170,25 +191,32 @@ class Form extends Component {
 
             <div className="slide" style={{marginLeft : `${this.state.marginLeft}px`}}>
 
+              <h5>Startup Request</h5>
               <div className="err"> {this.state.errMsg} </div>
-              <h5>Please give your contact information</h5>
-              <form ref={this.ref}> 
-                <textarea name="message" wrap="hard" cols="30" rows="10" value={this.state.email} style={{opacity:'0', position:'absolute', zIndex: '-100'}} readOnly></textarea>
-                <input type="text" placeholder="Name" name="from_name" onChange={this.formChange} />
-                <input type="text" name="reply_to" placeholder="Email" onChange={this.formChange} />
-              </form>
 
-              <h5>Select one or more systems</h5>
-              <div style={style.options}>
-                <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> iBoost</div>
-                <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> iLevel</div>
-                <div> <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/>Fire System</div>
+              <div className="form-style">
+                <form ref={this.ref}> 
+                  <textarea name="message" wrap="hard" cols="30" rows="10" value={this.state.email} style={{opacity:'0', position:'absolute', zIndex: '-100'}} readOnly></textarea>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company" name="company_name" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Email" name="company_email" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Address" name="company_address" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Contact Name" name="contact_name" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Contact Number" name="contact_number" onChange={this.formChange} /></div>
+                </form>
+
+                <h5>Select one or more systems</h5>
+                <div style={style.options}>
+                  <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> iBoost</div>
+                  <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> iLevel</div>
+                  <div> <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/>Fire System</div>
+                </div>
               </div>
-
+              
               <button className="btn btn-light" onClick={this.firstPageBtn}>Next</button>
+
             </div>
 
-          <div className="slide" style={this.state.iBoost? style.visible: style.hidden}>
+          <div className="slide agreement" style={this.state.iBoost? style.visible: style.hidden}>
             <h3>iBoost Requirements</h3>
             <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
@@ -221,7 +249,7 @@ class Form extends Component {
               </button>
             </div>
 
-            <div className="slide" style={this.state.iLevel? style.visible: style.hidden}>
+            <div className="slide agreement" style={this.state.iLevel? style.visible: style.hidden}>
               <h3>iLevel Requirements</h3>
               <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
@@ -251,7 +279,7 @@ class Form extends Component {
               onClick={()=>this.nextBtn("levelPage", this.state.submit === 'iLevel'? true: false)}>{this.state.submit === 'iLevel'? 'Submit': 'Next'}</button>
             </div>
 
-            <div className="slide" style={this.state.FireSystem? style.visible: style.hidden}>
+            <div className="slide agreement" style={this.state.FireSystem? style.visible: style.hidden}>
               <h3>Fire System Requirements</h3>
               <h5>please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>

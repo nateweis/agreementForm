@@ -15,7 +15,7 @@ class App extends Component{
     render(){
         return(
             <>  
-                {this.state.submited? <Completed /> : <Form submitedForm={this.submitedForm} /> }
+                {this.state.submited? <Completed /> : <Form submitedForm={this.submitedForm} />  }
             </>
         )
     }
