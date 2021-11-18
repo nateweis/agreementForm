@@ -215,10 +215,10 @@ class Form extends Component {
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company" name="company_name" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Email" name="company_email" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact" name="company_contact" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact Number" name="company_number" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact Phone Number" name="company_number" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Site Address" name="site_address" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact" name="site_contact" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact Number" name="site_number" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact Phone Number" name="site_number" onChange={this.formChange} /></div>
                 </form>
 
                 <h5 style={style.insideH5}>Select one or more systems</h5>
