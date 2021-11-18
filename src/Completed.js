@@ -16,7 +16,7 @@ function Completed(){
                     </svg>
                 </div>
                 <span className="completed-txt">Form Has Been Sent </span>
-                <span className="completed-txt lower">we will contact you shortly to set up your startup </span>
+                <span className="completed-txt lower">we will contact you shortly to schedule your appointment </span>
             </div>
         </div>
     )

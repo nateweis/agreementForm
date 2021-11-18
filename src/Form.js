@@ -177,8 +177,8 @@ class Form extends Component {
   }
 
   sendEmail = () => {
-
-    this.makeMessage(this.ref.current[0].value)
+    
+    this.makeMessage(this.ref.current[3].value)
     .then(() => {
       emailjs.sendForm('service_qigqh8m', 'template_7cofd7b', this.ref.current, 'user_PjMgAx2yK5zLNvRNhHRre')
       .then((result) => {
