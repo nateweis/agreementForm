@@ -48,7 +48,14 @@ body {
 .slide ul li{
   margin-bottom: 10px;
 }
-
+.logo{
+  width: 70px;
+  height: 70px;
+  background-image: url('./bootstrap/us-pump-logo-no-back-ground.png');
+  background-size: contain;
+  /* border: 1px solid black; */
+  margin-bottom: 30px;
+}
 .form-style{
   background-color: rgba(243, 243, 243, 0.596);
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.315);

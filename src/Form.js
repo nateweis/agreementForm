@@ -191,6 +191,7 @@ class Form extends Component {
 
             <div className="slide" style={{marginLeft : `${this.state.marginLeft}px`, marginTop: '30px'}}>
 
+              <div className="logo"></div>
               <h5 style={style.header}>Startup Request</h5>
               <div className="err"> {this.state.errMsg} </div>
 
