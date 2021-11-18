@@ -39,7 +39,7 @@ class Form extends Component {
   goBack = () => {
     this.setState(pre => {
       let marg = pre.marginLeft + 500
-      return {marginLeft : marg}
+      return {marginLeft : marg, errMsg: ""}
     })
   }
   nextBtn = (str, send) => {

@@ -78,6 +78,7 @@ body {
 .err{
   color: rgb(231, 85, 85);
   font-style: italic;
+  margin-bottom: 10px;
 }
 
 /* Completed Page Animations  */
