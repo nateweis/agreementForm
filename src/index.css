@@ -16,7 +16,6 @@ body {
 }
 
 
-
 .slideContainer{
   overflow: hidden;
   position: relative;
@@ -64,7 +63,10 @@ body {
 .formInput:nth-child(2){
   padding-top: 20px;
 }
-
+.subMsg{
+  font-size: 14px;
+  margin: 20px auto;
+}
 
 .err{
   color: rgb(231, 85, 85);

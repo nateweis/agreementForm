@@ -189,9 +189,9 @@ class Form extends Component {
 
           <div className="allSlides" style={{width: `${this.state.num * 515}px`}}>
 
-            <div className="slide" style={{marginLeft : `${this.state.marginLeft}px`}}>
+            <div className="slide" style={{marginLeft : `${this.state.marginLeft}px`, marginTop: '30px'}}>
 
-              <h5>Startup Request</h5>
+              <h5 style={style.header}>Startup Request</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <div className="form-style">
@@ -204,7 +204,7 @@ class Form extends Component {
                   <div className="formInput"><input className="form-control" type="text" placeholder="Contact Number" name="contact_number" onChange={this.formChange} /></div>
                 </form>
 
-                <h5>Select one or more systems</h5>
+                <h5 style={style.insideH5}>Select one or more systems</h5>
                 <div style={style.options}>
                   <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> iBoost</div>
                   <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> iLevel</div>
@@ -212,13 +212,13 @@ class Form extends Component {
                 </div>
               </div>
               
-              <button className="btn btn-light" onClick={this.firstPageBtn}>Next</button>
+              <button style={{marginTop: '20px'}} className="btn btn-light" onClick={this.firstPageBtn}>Next</button>
 
             </div>
 
           <div className="slide agreement" style={this.state.iBoost? style.visible: style.hidden}>
             <h3>iBoost Requirements</h3>
-            <h5>please make sure all the requirements listed below are met</h5>
+            <h5 className="subMsg" >please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
@@ -251,7 +251,7 @@ class Form extends Component {
 
             <div className="slide agreement" style={this.state.iLevel? style.visible: style.hidden}>
               <h3>iLevel Requirements</h3>
-              <h5>please make sure all the requirements listed below are met</h5>
+              <h5 className="subMsg">please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
@@ -281,7 +281,7 @@ class Form extends Component {
 
             <div className="slide agreement" style={this.state.FireSystem? style.visible: style.hidden}>
               <h3>Fire System Requirements</h3>
-              <h5>please make sure all the requirements listed below are met</h5>
+              <h5 className="subMsg">please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
               <ul>
@@ -321,7 +321,8 @@ class Form extends Component {
 const style = {
   options: {
     display: 'flex',
-    justifyContent: 'space-around'
+    justifyContent: 'space-around',
+    paddingBottom: '20px'
   },
   visible:{
     display: 'block',
@@ -332,6 +333,19 @@ const style = {
   },
   allSlides:{
     display: 'flex'
+  },
+  header:{
+    textAlign: 'start',
+    marginLeft: "5%",
+    marginBottom: '15px',
+    fontSize: '22px'
+  },
+  insideH5: {
+    textAlign:'start', 
+    marginLeft: '30px', 
+    marginTop: '30px', 
+    marginBottom: '12px',
+    fontSize: '16px'
   }
 }
 
