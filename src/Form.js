@@ -200,7 +200,7 @@ class Form extends Component {
                   <textarea name="message" wrap="hard" cols="30" rows="10" value={this.state.email} style={{opacity:'0', position:'absolute', zIndex: '-100'}} readOnly></textarea>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company" name="company_name" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Email" name="company_email" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Address" name="company_address" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Address" name="company_address" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Contact Name" name="contact_name" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Contact Number" name="contact_number" onChange={this.formChange} /></div>
                 </form>
