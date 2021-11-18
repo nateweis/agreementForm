@@ -13,7 +13,7 @@ class Form extends Component {
         iBoost: false,
         iLevel: false,
         FireSystem: false,
-        firstPage:["","","","",""],
+        firstPage:["","","","","","",""],
         boostPage:[false, false, false, false, false, false],
         levelPage:[false, false, false, false, false, false],
         firePage:[false, false, false, false, false, false],
@@ -78,24 +78,38 @@ class Form extends Component {
         return {firstPage : arr}
       })
     }
-    else if(e.target.name === 'company_address'){
+    else if(e.target.name === 'company_contact'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[2] = e.target.value
         return {firstPage : arr}
       })
     }
-    else if(e.target.name === 'contact_name'){
+    else if(e.target.name === 'company_number'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[3] = e.target.value
         return {firstPage : arr}
       })
     }
-    else if(e.target.name === 'contact_number'){
+    else if(e.target.name === 'site_address'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[4] = e.target.value
+        return {firstPage : arr}
+      })
+    }
+    else if(e.target.name === 'site_contact'){
+      this.setState((pre) => {
+        let arr = pre.firstPage
+        arr[5] = e.target.value
+        return {firstPage : arr}
+      })
+    }
+    else if(e.target.name === 'site_number'){
+      this.setState((pre) => {
+        let arr = pre.firstPage
+        arr[6] = e.target.value
         return {firstPage : arr}
       })
     }
@@ -200,9 +214,11 @@ class Form extends Component {
                   <textarea name="message" wrap="hard" cols="30" rows="10" value={this.state.email} style={{opacity:'0', position:'absolute', zIndex: '-100'}} readOnly></textarea>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company" name="company_name" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Email" name="company_email" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Address" name="company_address" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Contact Name" name="contact_name" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Contact Number" name="contact_number" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact" name="company_contact" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact Number" name="company_number" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Address" name="site_address" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact" name="site_contact" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact Number" name="site_number" onChange={this.formChange} /></div>
                 </form>
 
                 <h5 style={style.insideH5}>Select one or more systems</h5>
