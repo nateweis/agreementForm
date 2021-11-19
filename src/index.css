@@ -90,6 +90,33 @@ body {
   background-repeat: no-repeat;
   margin-bottom: -5px;
 }
+.requirments-header{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.iboost-header{
+  width: 150px;
+  height: 50px;
+  /* border: 1px solid black; */
+  display: inline-block;
+  background-image: url('./bootstrap/iboost-logo-No-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 40% ;
+  margin-right: 5px;
+}
+.ilevel-header{
+  width: 150px;
+  height: 50px;
+  /* border: 1px solid black; */
+  display: inline-block;
+  background-image: url('./bootstrap/ilevel-logo-No-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 40% ;
+  margin-right: 5px;
+}
 .subMsg{
   font-size: 14px;
   margin: 20px auto;
@@ -146,6 +173,9 @@ body {
 /* Bootstrap Stuff */
 .lowered-checkbox{
   margin-top: 10px;
+}
+.form-check-input{
+  margin-right: 4px;
 }
 .form-check-input:focus{
   box-shadow: none;

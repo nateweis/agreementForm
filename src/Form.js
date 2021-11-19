@@ -247,7 +247,7 @@ class Form extends Component {
             </div>
 
           <div className="slide agreement" style={this.state.iBoost? style.visible: style.hidden}>
-            <h3>iBoost Requirements</h3>
+            <h3 className="requirments-header"><span className="iboost-header"></span> Requirements</h3>
             <h5 className="subMsg" >please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
@@ -280,7 +280,7 @@ class Form extends Component {
             </div>
 
             <div className="slide agreement" style={this.state.iLevel? style.visible: style.hidden}>
-              <h3>iLevel Requirements</h3>
+            <h3 className="requirments-header"><span className="ilevel-header"></span> Requirements</h3>
               <h5 className="subMsg">please make sure all the requirements listed below are met</h5>
               <div className="err"> {this.state.errMsg} </div>
 
