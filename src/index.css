@@ -144,7 +144,7 @@ body {
 
 
 /* Bootstrap Stuff */
-.form-check-input{
+.lowered-checkbox{
   margin-top: 10px;
 }
 .form-check-input:focus{

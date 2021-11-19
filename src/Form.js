@@ -230,14 +230,14 @@ class Form extends Component {
 
                 <h5 style={style.insideH5}>Select one or more systems</h5>
                 <div style={style.options}>
-                  <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> 
+                  <div><input className="form-check-input lowered-checkbox" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> 
                     <span className="iboost"></span> <br /> <span style={{fontSize: 10, paddingLeft: '20px'}}>(Booster System)</span> 
                   </div>
-                  <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> 
+                  <div><input type="checkbox" className="form-check-input lowered-checkbox" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> 
                     <span className="ilevel"></span> <br /><span style={{fontSize: 10, paddingLeft: '20px'}}>(Sump/Sewer System)</span>
                   </div>
                   <div> 
-                    <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/><strong style={{marginTop: '7px', display: 'inline-block'}}>Fire System</strong>
+                    <input type="checkbox" className="form-check-input lowered-checkbox" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/><strong style={{marginTop: '7px', display: 'inline-block'}}>Fire System</strong>
                     </div>
                 </div>
               </div>
