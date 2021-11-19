@@ -26,9 +26,13 @@ class Form extends Component {
 
   firstPageBtn = () => { //the next btns
     let next = true
+    let emailStr = this.state.firstPage[1]
+    emailStr = emailStr.split('@')
+
     this.state.firstPage.forEach(s => {if(!s) next = false})
 
-    if(!next)this.setState({errMsg: "Fill out all fields"})
+    if(emailStr.length < 2) this.setState({errMsg: "Please use a valid email address"})
+    else if(!next)this.setState({errMsg: "Fill out all fields"})
     else if(!this.state.iBoost && !this.state.iLevel && !this.state.FireSystem) this.setState({errMsg: "Select a system"})
     else {
       if(this.state.FireSystem) this.setState({submit: 'FireSystem', errMsg: '', marginLeft : -500})
