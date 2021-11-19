@@ -26,7 +26,7 @@ class Form extends Component {
 
   firstPageBtn = () => { //the next btns
     let next = true
-    let emailStr = this.state.firstPage[1]
+    let emailStr = this.state.firstPage[2]
     emailStr = emailStr.split('@')
 
     this.state.firstPage.forEach(s => {if(!s) next = false})
@@ -78,14 +78,14 @@ class Form extends Component {
         return {firstPage : arr}
       })
     }
-    else if(e.target.name === 'company_email'){
+    else if(e.target.name === 'company_contact'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[1] = e.target.value
         return {firstPage : arr}
       })
     }
-    else if(e.target.name === 'company_contact'){
+    else if(e.target.name === 'company_email'){
       this.setState((pre) => {
         let arr = pre.firstPage
         arr[2] = e.target.value
@@ -185,7 +185,7 @@ class Form extends Component {
 
   sendEmail = () => {
     
-    this.makeMessage(this.ref.current[3].value)
+    this.makeMessage(this.ref.current[2].value)
     .then(() => {
       emailjs.sendForm('service_qigqh8m', 'template_7cofd7b', this.ref.current, 'user_PjMgAx2yK5zLNvRNhHRre')
       .then((result) => {
@@ -220,8 +220,8 @@ class Form extends Component {
                 <form ref={this.ref}> 
                   <textarea name="message" wrap="hard" cols="30" rows="10" value={this.state.email} style={{opacity:'0', position:'absolute', zIndex: '-100'}} readOnly></textarea>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company" name="company_name" onChange={this.formChange} /></div>
-                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Email" name="company_email" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact" name="company_contact" onChange={this.formChange} /></div>
+                  <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact Email" name="company_email" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Company Contact Phone Number" name="company_number" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Site Address" name="site_address" onChange={this.formChange} /></div>
                   <div className="formInput"><input className="form-control" type="text" placeholder="Site Contact" name="site_contact" onChange={this.formChange} /></div>
@@ -230,9 +230,15 @@ class Form extends Component {
 
                 <h5 style={style.insideH5}>Select one or more systems</h5>
                 <div style={style.options}>
-                  <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> iBoost</div>
-                  <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> iLevel</div>
-                  <div> <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/>Fire System</div>
+                  <div><input className="form-check-input" type="checkbox" onChange={this.handelCheckBox} id='iBoost' value="iBoost"/> 
+                    <span className="iboost"></span> <br /> <span style={{fontSize: 10, paddingLeft: '20px'}}>(Booster System)</span> 
+                  </div>
+                  <div><input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='iLevel' value="iLevel"/> 
+                    <span className="ilevel"></span> <br /><span style={{fontSize: 10, paddingLeft: '20px'}}>(Sump/Sewer System)</span>
+                  </div>
+                  <div> 
+                    <input type="checkbox" className="form-check-input" onChange={this.handelCheckBox} id='FireSystem' value="Fire System"/><strong style={{marginTop: '7px', display: 'inline-block'}}>Fire System</strong>
+                    </div>
                 </div>
               </div>
               

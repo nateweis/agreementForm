@@ -70,6 +70,26 @@ body {
 .formInput:nth-child(2){
   padding-top: 20px;
 }
+.iboost{
+  width: 107px;
+  height: 33px;
+  /* border: 1px solid black; */
+  display: inline-block;
+  background-image: url('./bootstrap/iboost-logo-No-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: -10px;
+}
+.ilevel{
+  width: 98px;
+  height: 28px;
+  /* border: 1px solid black; */
+  display: inline-block;
+  background-image: url('./bootstrap/ilevel-logo-No-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-bottom: -5px;
+}
 .subMsg{
   font-size: 14px;
   margin: 20px auto;
@@ -124,6 +144,9 @@ body {
 
 
 /* Bootstrap Stuff */
+.form-check-input{
+  margin-top: 10px;
+}
 .form-check-input:focus{
   box-shadow: none;
 }
