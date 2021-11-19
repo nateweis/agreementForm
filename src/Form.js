@@ -46,7 +46,10 @@ class Form extends Component {
     let next = true
     this.state[str].forEach(val => {if(!val) next = false})
 
-    if(!next)this.setState({errMsg: 'Please check all the requirements'})
+    if(!next){
+      this.setState({errMsg: 'Please check all the requirements'})
+      window.scrollTo(0, 0)
+    }
     else{
       
       if(send){
